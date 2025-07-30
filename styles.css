@@ -480,6 +480,7 @@ h1.headline {
   .hero-buttons {
     position: absolute;
     bottom: 6vh;
+    z-index:1;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
