@@ -1,0 +1,322 @@
+/*------------------------------------------------------------
+  Global Styles
+------------------------------------------------------------*/
+:root {
+  --color-bg: #0d1d36;
+  --color-text: #ffffff;
+  --color-primary: #2f7aff; /* button / accent */
+  --color-card-border: #2f7aff;
+  --color-card-bg: rgba(47, 122, 255, 0.08);
+  --max-width: 1100px;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+h1.headline {
+  font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--color-primary);
+  color: #fff;
+}
+
+/*------------------------------------------------------------
+  Header
+------------------------------------------------------------*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary.small {
+  font-size: 0.75rem;
+}
+
+/*------------------------------------------------------------
+  Hero Section
+------------------------------------------------------------*/
+.hero {
+  position: relative;
+  height: 61vh;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: var(--header-height);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080?text=Hero+Background') center/cover no-repeat;
+  z-index: -2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(13,29,54,0) 0%, rgba(13,29,54,1) 85%);
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero .logo {
+  width: clamp(260px, 40vw, 500px);
+}
+
+.btn-steam img {
+  width: 210px;
+  height: auto;
+}
+
+.wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  color: var(--color-bg);
+}
+
+/*------------------------------------------------------------
+  Social Icons
+------------------------------------------------------------*/
+.socials {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.socials ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-card-bg);
+  color: #fff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  background: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/*------------------------------------------------------------
+  Intro / Trailer
+------------------------------------------------------------*/
+.trailer {
+  border: 4px solid var(--color-primary);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.trailer iframe {
+  display: block;
+}
+
+/*------------------------------------------------------------
+  Feature Cards
+------------------------------------------------------------*/
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.feature-card img {
+  border: 5px solid var(--color-card-border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  -webkit-text-stroke: 1px var(--color-primary);
+}
+
+.feature-card p {
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/*------------------------------------------------------------
+  Gallery
+------------------------------------------------------------*/
+.gallery {
+  margin: 4rem 0;
+}
+
+.gallery-container {
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  border: 5px solid var(--color-card-border);
+  border-radius: 8px;
+}
+
+/*------------------------------------------------------------
+  Footer
+------------------------------------------------------------*/
+.site-footer {
+  background: var(--color-bg);
+  padding: 3rem 0 4rem;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 260px;
+  margin: 0 auto 1rem;
+}
+
+/*------------------------------------------------------------
+  Responsive
+------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .trailer iframe {
+    height: 260px;
+  }
+
+  .feature-card img {
+    border-width: 4px;
+  }
+} 
