@@ -168,11 +168,11 @@ h1.headline {
 }
 
 .hero .logo {
-  width: clamp(260px, 40vw, 500px);
+  width: clamp(400px, 60vw, 700px);
 }
 
 .btn-steam img {
-  width: 210px;
+  width: 280px;
   height: auto;
 }
 
