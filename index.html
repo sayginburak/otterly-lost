@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEETO – Power to Change</title>
+  <title>Otterly Lost – Cozy Adventure</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4xcB9KKN8rNOeA6bSHJQz1cz9gNk5RfUgsg4V7RXIqEdG1XgmsobcLUvjl7kd6VZ5Hg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,13 +19,13 @@
   <header class="site-header">
     <nav class="navbar container">
       <ul class="nav-left">
-        <li><a href="#about">About</a></li>
         <li><a href="#trailer">Trailer</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
       </ul>
       <ul class="nav-right">
         <li><a href="#press-kit">Press Kit</a></li>
-        <li><a href="#wishlist">Wishlist</a></li>
+        <li><a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank">Wishlist</a></li>
       </ul>
     </nav>
   </header>
@@ -34,10 +34,16 @@
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content container">
-      <img src="assets/logo.png" alt="TEETO Logo" class="logo">
-      <a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" class="btn-steam" target="_blank">
-        <img src="assets/wishlist.png" alt="Wishlist on Steam">
-      </a>
+      <img src="assets/logo.png" alt="Otterly Lost Logo" class="logo">
+      <div class="hero-buttons">
+        <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener" class="btn-discord">
+          <img src="assets/discord.png" alt="Join our Discord">
+        </a>
+        <a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank" rel="noopener" class="btn-steam">
+          <img src="assets/wishlist.png" alt="Wishlist on Steam">
+        </a>
+      </div>
+
     </div>
 
     <!-- SVG Wave Separator -->
@@ -49,58 +55,59 @@
   <!-- Social Icons -->
   <section class="socials container" aria-label="Social Links">
     <ul>
-      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+      <li><a href="https://x.com/SoulworksInt" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a></li>
+      <li><a href="https://www.tiktok.com/@soulworksinteractive" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a></li>
+      <li><a href="https://www.instagram.com/soulworksinteractive/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://bsky.app/profile/soulworksint.bsky.social" target="_blank" rel="noopener"><i class="fas fa-cloud"></i></a></li>
     </ul>
   </section>
 
   <!-- Intro / Trailer -->
-  <section class="intro container" id="about">
-    <h1 class="headline">TEETO IS AN ABSOLUTELY ADORABLE ADVENTURE 3D PLATFORMER</h1>
-    <div class="trailer" id="trailer">
-      <iframe width="100%" height="480" src="https://www.youtube.com/embed/65mCLBT6wmQ?si=xhhzyJZpWVhy-wfT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <section class="intro container" id="trailer">
+    <h1 class="headline">OTTERLY LOST IS A COZY STORY-RICH ADVENTURE</h1>
+    <div class="trailer">
+      <iframe width="100%" height="480" src="https://www.youtube.com/embed/mFjwTzhV6P0?si=lB9ykFcufvBlLcsO&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="features container">
+  <section class="features container" id="about">
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+1" alt="Absorb & Change Forms Screenshot">
-      <h2>ABSORB & CHANGE FORMS!</h2>
-      <p>Teeto can absorb objects from the environment and instantly take on their unique abilities. From powerful attacks to charming tricks, experiment with different forms to battle shadow creatures, navigate the world, and discover new ways to explore the vibrant worlds.</p>
+      <img src="https://placehold.co/616x200" alt="Absorb & Change Forms Screenshot">
+      <h2>EXPLORE A VIBRANT ISLAND!</h2>
+      <p>Roam lush forests, rocky canyons and sun-kissed beaches at your own pace, uncovering hidden corners and breathtaking vistas along the way.</p>
     </div>
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+2" alt="Single Player or Co-Op Screenshot">
-      <h2>SINGLE PLAYER OR CO-OP!</h2>
-      <p>Nearly everything is better when you get some help. Teeto is no different! Partner up to tackle the world in split screen co-op.</p>
+      <img src="https://placehold.co/616x200" alt="Single Player or Co-Op Screenshot">
+      <h2>DIVE BENEATH THE WAVES!</h2>
+      <p>Swim through shimmering kelp forests, mysterious caves and forgotten shipwrecks to discover the secrets that lie beneath the waves.</p>
     </div>
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+3" alt="Fight The Shadow Corruption Screenshot">
-      <h2>FIGHT THE SHADOW CORRUPTION!</h2>
-      <p>The shadow creatures are malevolent beings that spread decay, draining the world of its color and life. Teeto and Navy must work together to defeat the shadow creatures, cleansing their corruption and restoring life to the world.</p>
+      <img src="https://placehold.co/616x200" alt="Fight The Shadow Corruption Screenshot">
+      <h2>GATHER TREASURES & GEAR!</h2>
+      <p>Collect shells, treasures and handy gear that upgrade Otto’s abilities, letting you jump higher, glide farther and smash through obstacles.</p>
     </div>
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+4" alt="Save The Baby Michaels Screenshot">
-      <h2>SAVE THE BABY MICHAELS!</h2>
-      <p>Teeto loves Navy’s lost spoonfriend. One of them was named Michael. But Michael went and split himself into two, then three, then… oh gosh, who knows how many funny Bunnies really had! Now, the Michaels are lost, scattered across the world! Find them, rescue them, bring them home!</p>
+      <img src="https://placehold.co/616x200" alt="Save The Baby Michaels Screenshot">
+      <h2>MEET FRIENDLY ANIMALS!</h2>
+      <p>Befriend a lovable cast of island animals, hear their stories and lend a paw in heartfelt quests to restore the balance of nature.</p>
     </div>
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+5" alt="Help Out Your Buddies Screenshot">
-      <h2>HELP OUT YOUR BUDDIES!</h2>
-      <p>Along your journey, you will encounter a cast of wild and quirky characters, each with their own eccentric personalities and problems. Lend a hand, and try not get sidetracked by the hilarious and sometimes absurd side missions, quests, or unexpected detours.</p>
+      <img src="https://placehold.co/616x200" alt="Help Out Your Buddies Screenshot">
+      <h2>SOLVE LIGHT PUZZLES & PLATFORMING!</h2>
+      <p>Enjoy gentle platforming challenges and clever puzzles that add just the right touch of playful problem-solving to your adventure.</p>
     </div>
 
     <div class="feature-card">
-      <img src="https://via.placeholder.com/900x400?text=Feature+6" alt="Collect Different Outfits Screenshot">
-      <h2>COLLECT DIFFERENT OUTFITS!</h2>
-      <p>Teeto can unlock a variety rich and stylish costumes, from the effortlessly cool to the downright ridiculous. Saving the world is important – but who says you can’t look fashionable while doing it?</p>
+      <img src="https://placehold.co/616x200" alt="Collect Different Outfits Screenshot">
+      <h2>EXPRESS YOUR STYLE!</h2>
+      <p>Mix and match adorable outfits and accessories to show off your sea-otter style while you splash, glide and explore.</p>
     </div>
 
   </section>
@@ -108,17 +115,76 @@
   <!-- Gallery / Screenshot Strip -->
   <section class="gallery" id="gallery">
     <div class="gallery-container container">
-      <img src="https://via.placeholder.com/1200x600?text=Screenshot+Gallery" alt="Game screenshot gallery" class="gallery-image">
-      <!-- Arrows could be added with JS for a slider but using static placeholder for now -->
+      <div class="gallery-grid">
+        <a href="assets/screenshots/OtterlyLost_01.png" class="gallery-item" data-index="0">
+          <img src="assets/screenshots/OtterlyLost_01.png" alt="Otterly Lost - Exploring the vibrant island" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_02.png" class="gallery-item" data-index="1">
+          <img src="assets/screenshots/OtterlyLost_02.png" alt="Otterly Lost - Underwater exploration" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_03.png" class="gallery-item" data-index="2">
+          <img src="assets/screenshots/OtterlyLost_03.png" alt="Otterly Lost - Meeting friendly animals" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_04.png" class="gallery-item" data-index="3">
+          <img src="assets/screenshots/OtterlyLost_04.png" alt="Otterly Lost - Platforming adventure" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_05.png" class="gallery-item" data-index="4">
+          <img src="assets/screenshots/OtterlyLost_05.png" alt="Otterly Lost - Discovering treasures" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_06.png" class="gallery-item" data-index="5">
+          <img src="assets/screenshots/OtterlyLost_06.png" alt="Otterly Lost - Beautiful landscapes" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_07.png" class="gallery-item" data-index="6">
+          <img src="assets/screenshots/OtterlyLost_07.png" alt="Otterly Lost - Puzzle solving" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_08.png" class="gallery-item" data-index="7">
+          <img src="assets/screenshots/OtterlyLost_08.png" alt="Otterly Lost - Gliding through canyons" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_09.png" class="gallery-item" data-index="8">
+          <img src="assets/screenshots/OtterlyLost_09.png" alt="Otterly Lost - Character customization" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_10.png" class="gallery-item" data-index="9">
+          <img src="assets/screenshots/OtterlyLost_10.png" alt="Otterly Lost - Scenic vistas" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_11.png" class="gallery-item" data-index="10">
+          <img src="assets/screenshots/OtterlyLost_11.png" alt="Otterly Lost - Cave exploration" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_12.png" class="gallery-item" data-index="11">
+          <img src="assets/screenshots/OtterlyLost_12.png" alt="Otterly Lost - Forest adventures" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_13.png" class="gallery-item" data-index="12">
+          <img src="assets/screenshots/OtterlyLost_13.png" alt="Otterly Lost - Beach scenes" class="gallery-image">
+        </a>
+        <a href="assets/screenshots/OtterlyLost_14.png" class="gallery-item" data-index="13">
+          <img src="assets/screenshots/OtterlyLost_14.png" alt="Otterly Lost - Interacting with wildlife" class="gallery-image">
+        </a>
+      </div>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav prev">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <button class="lightbox-nav next">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-image">
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner container">
-      <img src="https://via.placeholder.com/300x80?text=EAT+PANT+GAMES" alt="Eat Pant Games Logo" class="footer-logo">
-      <small>&copy; 2025 Eat Pant Games</small>
+      <div class="footer-logo-wrapper">
+        <img src="assets/soulworks.jpg" alt="Soulworks Interactive Logo" class="footer-logo">
+      </div>
+      <small>&copy; 2026 Soulworks Interactive</small>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html> 
