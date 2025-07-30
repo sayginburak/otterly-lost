@@ -551,3 +551,5 @@ h1.headline {
     background-position: 0% center;
   }
 }
+
+.wave { pointer-events:none; }
