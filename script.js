@@ -74,6 +74,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ----------------------------
+  // Carousel (on-page slider)
+  // ----------------------------
+  const carouselImg = document.querySelector('.carousel-image');
+  const carouselPrev = document.querySelector('.carousel-nav.prev');
+  const carouselNext = document.querySelector('.carousel-nav.next');
+
+  if (carouselImg && carouselPrev && carouselNext && galleryItems.length) {
+    let slideIndex = 0;
+
+    function showSlide(idx) {
+      slideIndex = (idx + galleryItems.length) % galleryItems.length;
+      const imgSrc = galleryItems[slideIndex].href;
+      const imgAlt = galleryItems[slideIndex].querySelector('img').alt;
+      carouselImg.src = imgSrc;
+      carouselImg.alt = imgAlt;
+    }
+
+    carouselPrev.addEventListener('click', () => showSlide(slideIndex - 1));
+    carouselNext.addEventListener('click', () => showSlide(slideIndex + 1));
+
+    // Initialize
+    showSlide(0);
+  }
+
   // Smooth scrolling for nav links with header offset
   const headerOffset = 80;
   document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
