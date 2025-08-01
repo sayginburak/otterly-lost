@@ -122,10 +122,9 @@ h1.headline {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'NavFont', sans-serif;
-  font-weight: 600;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
   width: 100%;
   padding: 0 2rem;
 }
