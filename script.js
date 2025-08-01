@@ -95,9 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselPrev.addEventListener('click', () => showSlide(slideIndex - 1));
     carouselNext.addEventListener('click', () => showSlide(slideIndex + 1));
 
+    // Clicking carousel opens lightbox
+    carouselImg.addEventListener('click', () => {
+      openLightbox(slideIndex);
+    });
+
     // Initialize
     showSlide(0);
   }
+
+  // ----------------------------
+  // Transparent navbar fade-in on scroll
+  // ----------------------------
+  const headerEl = document.querySelector('.site-header');
+  const SCROLL_THRESHOLD = 50;
+  function handleHeaderScroll() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      headerEl.classList.add('scrolled');
+    } else {
+      headerEl.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', handleHeaderScroll);
+  handleHeaderScroll();
 
   // Smooth scrolling for nav links with header offset
   const headerOffset = 80;
