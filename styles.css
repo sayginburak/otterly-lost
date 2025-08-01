@@ -568,6 +568,12 @@ h1.headline {
     font-size: 1.5rem;
   }
 
+  /* Prevent fade backdrop on mobile */
+  .site-header.scrolled {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
   .hero { min-height: 500px; align-items: center; } /* margin already zero, keep */
 
   .hero-bg { background-position: 0% center; }
@@ -578,7 +584,16 @@ h1.headline {
 
   /* Mobile navbar adjustments */
   .site-header {
-    position: static;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+  /* ensure first section (hero) doesn't jump under absolute header */
+  .hero {
+    padding-top: var(--header-height);
   }
   .navbar .nav-left {
     display: none !important;
