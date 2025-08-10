@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event Listeners
   galleryItems.forEach((item, index) => {
     item.addEventListener('click', (e) => {
-      console.log('[DEBUG] Gallery item anchor clicked. Target:', e.target);
       if (e.target.closest('.asset-download')) {
-        console.log('[DEBUG] Click was inside a download button, should not open lightbox.');
         return;
       }
       e.preventDefault();
@@ -214,23 +212,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ----------------------------
-  // Standalone quick download button
-  // ----------------------------
-  const quickDownloadBtn = document.getElementById('download-logo-btn');
-  if (quickDownloadBtn) {
-    quickDownloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const url = quickDownloadBtn.getAttribute('data-url');
-      const filename = quickDownloadBtn.getAttribute('data-filename') || (url ? url.split('/').pop() : 'download');
-      if (!url) return;
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    });
-  }
+  
 });
