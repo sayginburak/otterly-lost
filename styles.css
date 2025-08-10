@@ -191,7 +191,7 @@ h1.headline {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(13,29,54,0) 0%, rgba(13,29,54,0.3) 70%, rgba(13,29,54,1) 95%);
+  background: none;
   z-index: -1;
 }
 
@@ -358,6 +358,262 @@ h1.headline {
 }
 
 /*------------------------------------------------------------
+  Press Kit Page
+------------------------------------------------------------*/
+.presskit-page {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Fredoka';
+  line-height: 1.6;
+  padding: 2rem 0;
+}
+
+.presskit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
+/* Left Column Styles */
+.presskit-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.presskit-logo {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.presskit-left h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6DD1FF;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.presskit-left p {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.presskit-left a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.presskit-left a:hover {
+  color: #fff;
+}
+
+/* Factsheet list styling */
+.factsheet-list { margin: 0; }
+.factsheet-list dt {
+  display: block;
+  margin-top: 1rem;
+  font-family: 'NavFont', sans-serif;
+  font-weight: 800;
+  color: #6DD1FF;
+  letter-spacing: 0.03em;
+}
+.factsheet-list dd {
+  display: block;
+  margin: 0.15rem 0 0.75rem 0;
+  color: #ffffff;
+}
+
+/* Right Column Styles */
+.presskit-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.presskit-right h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6DD1FF;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--color-card-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.image-grid img:hover {
+  border-color: #6DD1FF;
+}
+
+.video-links a,
+.asset-links a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.video-links a:hover,
+.asset-links a:hover {
+  color: #fff;
+}
+
+/* Full-width assets section below two columns */
+.presskit-assets {
+  grid-column: 1 / -1; /* span both columns */
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.presskit-assets h3 {
+  font-size: 1.25rem;
+  color: #6DD1FF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.presskit-assets h4 {
+  font-size: 1rem;
+  color: #6DD1FF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.asset-grid > a {
+  border: 2px solid var(--color-card-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  position: relative; /* enable overlay button positioning */
+  display: block;
+}
+
+.asset-grid > a:hover { 
+  border-color: #6DD1FF;
+  transform: translateY(-2px);
+}
+
+.asset-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Per-thumbnail download button (presskit assets) */
+.asset-download {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  z-index: 2;
+  opacity: 0;           /* hidden by default */
+  pointer-events: none; /* don't block clicks when hidden */
+  transition: opacity 0.18s ease; /* minimal fade */
+}
+
+.asset-download i {
+  font-size: 1.1rem;
+}
+
+.asset-grid > a:hover .asset-download {
+  background: transparent;
+  border: none;
+  transform: none;
+  opacity: 1;           /* show on hover */
+  pointer-events: auto; /* clickable on hover */
+}
+
+/* Footer */
+.presskit-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.presskit-contact h3 {
+  font-size: 1rem;
+  color: #6DD1FF;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.presskit-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.presskit-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.presskit-social a:hover {
+  color: var(--color-primary);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .presskit-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .presskit-footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/*------------------------------------------------------------
   Gallery / Carousel
 ------------------------------------------------------------*/
 .gallery {
@@ -447,6 +703,7 @@ h1.headline {
   object-fit: contain;
   border: none;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transition: opacity 180ms ease; /* a touch lighter fade */
 }
 
 .lightbox-close {
@@ -486,6 +743,28 @@ h1.headline {
 .lightbox-nav:hover { background: rgba(255, 255, 255, 0.2); }
 .lightbox-nav.prev { left: 20px; }
 .lightbox-nav.next { right: 20px; }
+
+/* Download button in lightbox */
+.lightbox-download {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.lightbox-download:hover { 
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+.lightbox-download i { font-size: 1.1rem; }
 
 /*------------------------------------------------------------
   Footer
