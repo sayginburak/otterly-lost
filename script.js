@@ -71,6 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event Listeners
   galleryItems.forEach((item, index) => {
     item.addEventListener('click', (e) => {
+      console.log('[DEBUG] Gallery item anchor clicked. Target:', e.target);
+      if (e.target.closest('.asset-download')) {
+        console.log('[DEBUG] Click was inside a download button, should not open lightbox.');
+        return;
+      }
       e.preventDefault();
       openLightbox(index);
     });
@@ -90,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-    
+
     switch(e.key) {
       case 'Escape':
         closeLightbox();
@@ -110,16 +115,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const presskitThumbs = document.querySelectorAll('.presskit-assets .asset-grid a');
   presskitThumbs.forEach(anchor => {
     if (anchor.querySelector('.asset-download')) return; // avoid duplicates
-    const dl = document.createElement('a');
+
+    // Use a non-anchor element to avoid <a> inside <a>
+    const dl = document.createElement('span');
     dl.className = 'asset-download';
-    dl.href = anchor.href;
-    dl.setAttribute('download', '');
+    dl.setAttribute('role', 'button');
+    dl.setAttribute('tabindex', '0');
     dl.setAttribute('aria-label', 'Download image');
     dl.innerHTML = '<i class="fa-solid fa-download"></i>';
+
     dl.addEventListener('click', (ev) => {
-      // prevent opening lightbox
+      // Prevent both lightbox open and default navigation
       ev.stopPropagation();
+      ev.preventDefault();
+
+      const url = anchor.href;
+      const filename = anchor.getAttribute('download') || url.split('/').pop() || 'asset';
+
+      // Programmatically trigger a download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     });
+
+    // Keyboard accessibility
+    dl.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter' || ev.key === ' ') dl.click();
+    });
+
     anchor.appendChild(dl);
   });
 
@@ -186,4 +213,24 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // ----------------------------
+  // Standalone quick download button
+  // ----------------------------
+  const quickDownloadBtn = document.getElementById('download-logo-btn');
+  if (quickDownloadBtn) {
+    quickDownloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = quickDownloadBtn.getAttribute('data-url');
+      const filename = quickDownloadBtn.getAttribute('data-filename') || (url ? url.split('/').pop() : 'download');
+      if (!url) return;
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  }
 });
