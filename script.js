@@ -219,5 +219,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Subtle upward movement
     video.style.transform = `scale(3) translateY(-${scrollY * 0.1}px)`;
   });
-
 });
