@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
 
-    switch(e.key) {
+    switch (e.key) {
       case 'Escape':
         closeLightbox();
         break;
@@ -212,5 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const video = document.querySelector('.video-bg video');
+
+    // Subtle upward movement
+    video.style.transform = `scale(3) translateY(-${scrollY * 0.1}px)`;
+  });
+
 });
