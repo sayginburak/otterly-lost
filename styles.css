@@ -918,10 +918,22 @@ h1.headline {
 .gif4 video {
   pointer-events: none;
   overflow: hidden;
+}
+
+video {
   pointer-events: none;
 }
 
+
 video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-overlay-enclosure {
   display: none !important;
 }
 
