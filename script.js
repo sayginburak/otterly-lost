@@ -220,4 +220,21 @@ document.addEventListener('DOMContentLoaded', () => {
     video.style.transform = `scale(1.5) translateY(-${scrollY * 0.03}px)`;
   });
 
+  const goTopBtn = document.getElementById('goTopBtn');
+
+  // Show button when scrolling down
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // show after 300px scroll
+      goTopBtn.style.display = 'flex';
+    } else {
+      goTopBtn.style.display = 'none';
+    }
+  });
+
+  // Smooth scroll to top on click
+  goTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+
 });

@@ -173,8 +173,7 @@ h1.headline {
 }
 
 .main-content {
-  background-color: #103e46;
-  padding-bottom: 80px;
+  background: linear-gradient(to bottom,#103e46, #103e468c);
   margin: auto;
   margin-top: 0;
   width: 95%;
@@ -870,22 +869,14 @@ h1.headline {
   Footer
 ------------------------------------------------------------*/
 .site-footer {
-  padding: 3rem 0 0rem;
   text-align: center;
+  width: 100%;
 }
 
-.footer-logo-wrapper {
-  background: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  margin: 0 auto 0rem;
-  width: fit-content;
-}
-
-.footer-logo {
-  width: 140px;
-  height: auto;
-  display: block;
+.footer-container {
+  background-color: #0a212548;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
 /*------------------------------------------------------------
@@ -896,4 +887,28 @@ h1.headline {
 /* Tablet */
 .wave-bg {
   pointer-events: none;
+}
+
+#goTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  background-color: #1f748a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#goTopBtn:hover {
+  background-color: #122936;
+  transform: scale(1.1);
 }
