@@ -18,55 +18,21 @@
 </head>
 
 <body>
-
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <ul class="nav-left">
-        <li><a href="#trailer">Trailer</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <p>|</p>
-        <section class="socials container" aria-label="Social Links">
-          <ul>
-            <li><a href="https://x.com/SoulworksInt" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li><a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener"><i
-                  class="fab fa-discord"></i></a>
-            </li>
-            <li><a href="https://www.tiktok.com/@soulworksinteractive" target="_blank" rel="noopener"><i
-                  class="fab fa-tiktok"></i></a></li>
-            <li><a href="https://www.instagram.com/soulworksinteractive/" target="_blank" rel="noopener"><i
-                  class="fab fa-instagram"></i></a></li>
-            <li><a href="https://bsky.app/profile/soulworksint.bsky.social" target="_blank" rel="noopener"><i
-                  class="fas fa-cloud"></i></a></li>
-          </ul>
-        </section>
-      </ul>
-      <ul class="nav-right">
-        <li><a href="presskit.html">Press Kit</a></li>
-        <li><a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank">Wishlist</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <div class="video-bg">
     <video autoplay muted loop playsinline>
       <source src="assets/bg/background.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+  <div class="content-wrapper">
     <div class="logo-wrapper">
       <img src="assets/logo.png" alt="Otterly Lost Logo" class="logo">
     </div>
-  </section>
 
-  <div class="content-wrapper">
     <div class="wave-bg">
       <img src="assets/bg/wave.png" alt="wave">
     </div>
+
     <!-- Main Content -->
     <div class="main-content">
       <!-- Intro / Trailer -->
@@ -95,17 +61,38 @@
 
       <!-- Features -->
       <section class="features container" id="about">
+        <div class="steam-widget-wrapper">
+          <iframe class="steam-widget"
+            src="https://store.steampowered.com/widget/3861710/?t=Play%20as%20Otto%2C%20a%20curious%20sea%20otter%20swept%20far%20from%20home.%20In%20this%20story-rich%20adventure%2C%20explore%20wild%20forests%2C%20dive%20underwater%2C%20glide%20over%20rocky%20canyons%2C%20and%20climb%20your%20way%20back.%20Meet%20friendly%20animals%2C%20complete%20heartfelt%20quests%2C%20and%20enjoy%20soft%20challenges%2C%20at%20your%20own%20pace!"
+            frameborder="0" width="646" height="190">
+          </iframe>
+        </div>
 
-        <iframe class="steam-widget"
-          src="https://store.steampowered.com/widget/3861710/?t=Play%20as%20Otto%2C%20a%20curious%20sea%20otter%20swept%20far%20from%20home.%20In%20this%20story-rich%20adventure%2C%20explore%20wild%20forests%2C%20dive%20underwater%2C%20glide%20over%20rocky%20canyons%2C%20and%20climb%20your%20way%20back.%20Meet%20friendly%20animals%2C%20complete%20heartfelt%20quests%2C%20and%20enjoy%20soft%20challenges%2C%20at%20your%20own%20pace!"
-          frameborder="0" width="646" height="190">
-        </iframe>
+        <div class="linktree-container">
+          <div class="links">
+            <a href="https://x.com/SoulworksInt" target="_blank" class="link-btn">
+              <img src="assets/socials/x.png" alt="" class="icon">X / Twitter</a>
+            <a href="https://bsky.app/profile/soulworksint.bsky.social" target="_blank" class="link-btn">
+              <img src="assets/socials/bluesky.png" alt="" class="icon">Bluesky</a>
+            <a href="https://www.tiktok.com/@soulworksinteractive" target="_blank" class="link-btn">
+              <img src="assets/socials/tiktok.png" alt="" class="icon">TikTok</a>
+            <a href="https://www.instagram.com/soulworksinteractive/" target="_blank" class="link-btn">
+              <img src="assets/socials/instagram.png" alt="" class="icon">Instagram</a>
+            <a href="https://www.youtube.com/@soulworksinteractive" target="_blank" class="link-btn">
+              <img src="assets/socials/youtube.png" alt="" class="icon">YouTube</a>
+            <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" class="link-btn">
+              <img src="assets/socials/discord.png" alt="" class="icon">Discord</a>
+            <a href="https://otterlylost.com/presskit.html" target="_blank" class="link-btn">
+              <img src="assets/socials/press-kit.png" alt="" class="icon">Press Kit</a>
+          </div>
+        </div>
 
         <div class="feature-card">
-          <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener noreferrer">
-            <img src="assets/joindiscord.png" alt="Join Discord" class="join-discord" />
-          </a>
+          <img src="assets/joindiscord.png" alt="Join Discord" class="join-discord" />
         </div>
+
+        <hr class="divider">
+
         <div class="feature-card">
           <h2>A COZY STORY-RICH ADVENTURE</h2>
           <p>Otterly Lost is about wonder, friendship, and finding where you belong. You
@@ -195,7 +182,6 @@
             can’t have their own fashion?
           </p>
         </div>
-
       </section>
 
       <!-- Gallery / Screenshot Strip -->
