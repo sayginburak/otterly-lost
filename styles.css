@@ -6,7 +6,7 @@
   --color-bg: #17626E;
   --color-text: #ffffff;
   --color-header: #EEE1D0;
-  --color-primary: black;
+  --color-primary: rgb(31, 62, 63);
   /* button / accent */
   --color-card-border: #2f7aff;
   --color-card-bg: rgba(47, 122, 255, 0.08);
@@ -916,6 +916,8 @@ h1.headline {
 .gif2 video,
 .gif3 video,
 .gif4 video {
+  pointer-events: none;
+  overflow: hidden;
   pointer-events: none;
 }
 
