@@ -216,7 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollY = window.scrollY;
     const video = document.querySelector('.video-bg video');
 
-    // Subtle upward movement
-    video.style.transform = `scale(3) translateY(-${scrollY * 0.1}px)`;
+    // Scale slightly larger than 1 and move up
+    video.style.transform = `scale(1.5) translateY(-${scrollY * 0.03}px)`;
   });
+
 });
