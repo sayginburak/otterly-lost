@@ -906,10 +906,24 @@ h1.headline {
 ------------------------------------------------------------*/
 @media (max-width: 1000px) {}
 
-/* Tablet */
+/* Tablet & Mobile */
 .wave-bg {
   pointer-events: none;
 }
+
+.video-bg video,
+.gif1 video,
+.gif2 video,
+.gif3 video,
+.gif4 video {
+  pointer-events: none;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Go Top Button */
 
 #goTopBtn {
   position: fixed;
