@@ -6,7 +6,7 @@
   --color-bg: #17626E;
   --color-text: #ffffff;
   --color-header: #EEE1D0;
-  --color-primary: rgb(31, 62, 63);
+  --color-primary: rgb(2, 49, 51);
   /* button / accent */
   --color-card-border: #2f7aff;
   --color-card-bg: rgba(47, 122, 255, 0.08);
@@ -358,26 +358,49 @@ h1.headline {
   /* space from left edge */
 }
 
-.link-btn {
+.link-btn,
+.link-btn-discord,
+.link-btn-presskit {
   position: relative;
-  /* so the icon stays inside */
   display: flex;
   justify-content: center;
-  /* centers the text */
   align-items: center;
   padding: 12px;
   background: #122936;
+  background: linear-gradient(45deg, #0b2727c9, #012327c4);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   width: 100%;
+  font-size: clamp(.45rem, 2.75vw, 1rem);
+}
+
+.link-btn-discord {
+  background: #5865f2;
+  color: #E0E3FF;
+}
+
+.link-btn-presskit {
+  background: #372c26;
+  color: #efdbc3;
 }
 
 .link-btn:hover {
-  background: #1f748a;
+  background: #136666;
   transform: scale(1.05);
 }
 
+.link-btn-discord:hover {
+  background: #4c57cf;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.link-btn-presskit:hover {
+  background: #42332c;
+  color: #ffffff;
+  transform: scale(1.05);
+}
 
 /*------------------------------------------------------------
   Feature Cards
@@ -402,8 +425,8 @@ h1.headline {
 .gif4 {
   display: block;
   margin: auto;
-  margin-top: .75rem;
-  margin-bottom: .75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   clip-path: polygon(4% 0, 95% 0, 100% 8%, 100% 87%, 96% 100%, 5% 100%, 0 91%, 0 11%);
   overflow: hidden;
   width: 100%;
