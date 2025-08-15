@@ -228,14 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nodeToInsert.style.opacity = '0';
       nodeToInsert.style.transition = `opacity ${CAROUSEL_FADE_MS}ms ease`;
 
-      // If there is no previous child, append baseline placeholder so frame has a child
-      if (!previousChild) {
-        // Create a lightweight spacer so the first child can be absolutely positioned without collapsing
-        const spacer = document.createElement('div');
-        spacer.style.opacity = '0';
-        spacer.style.height = '1px';
-        carouselFrame.appendChild(spacer);
-      }
+      // No spacer needed due to fixed aspect ratio on the frame
 
       carouselFrame.appendChild(nodeToInsert);
 
@@ -275,11 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             }, CAROUSEL_FADE_MS);
           } else {
-            // Remove spacer if present
-            const maybeSpacer = carouselFrame.firstElementChild;
-            if (maybeSpacer && maybeSpacer !== nodeToInsert && maybeSpacer.style && maybeSpacer.style.opacity === '0') {
-              carouselFrame.removeChild(maybeSpacer);
-            }
             // End of transition
             if (localToken === transitionToken) {
               isTransitioning = false;
@@ -297,14 +285,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetImg = nodeToInsert.querySelector ? (nodeToInsert.querySelector('img') || null) : null;
       if (targetImg && typeof targetImg.decode === 'function') {
         targetImg.decode().then(startTransition).catch(startTransition);
-        // Absolute safety timeout just in case
-        setTimeout(startTransition, 1500);
+        // Minimal safety timeout
+        setTimeout(startTransition, 600);
       } else if (targetImg) {
         if (targetImg.complete && targetImg.naturalWidth > 0) {
           startTransition();
         } else {
           targetImg.onload = () => startTransition();
-          setTimeout(startTransition, 1500);
+          setTimeout(startTransition, 600);
         }
       } else {
         startTransition();
