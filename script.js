@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = lightbox.querySelector('.prev');
   const nextBtn = lightbox.querySelector('.next');
   const downloadBtn = lightbox.querySelector('.lightbox-download');
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryItems = document.querySelectorAll('.gallery-item, .gallery-item-company');
   let currentIndex = 0;
   const FADE_MS = 180;
 

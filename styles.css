@@ -6,7 +6,7 @@
   --color-bg: #17626E;
   --color-text: #ffffff;
   --color-header: #EEE1D0;
-  --color-primary: rgb(2, 49, 51);
+  --color-primary: rgb(143, 223, 219);
   /* button / accent */
   --color-card-border: #2f7aff;
   --color-card-bg: rgba(47, 122, 255, 0.08);
@@ -191,41 +191,6 @@ h1.headline {
 .content-wrapper {
   margin-top: clamp(1rem, 5vw, 4rem);
 }
-
-/*------------------------------------------------------------
-  Social Icons
-------------------------------------------------------------*/
-
-/* .socials {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-} */
-
-/* .socials ul {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  font-size: 1.25rem;
-}
-
-.socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 0%;
-  background: var(--color-card-bg);
-  color: #fff;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.socials a:hover {
-  color: var(--color-primary);
-  transform: translateY(2px);
-  transition: color 0.2s ease, transform 0.2s ease;
-} */
 
 /*------------------------------------------------------------
   Headline
@@ -478,17 +443,30 @@ h1.headline {
   Press Kit Page
 ------------------------------------------------------------*/
 .presskit-page {
-  background: var(--color-bg);
   color: var(--color-text);
-  font-family: 'Fredoka';
-  line-height: 1.6;
-  padding: 2rem 0;
+  line-height: 1.33;
+}
+
+.presskit-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.presskit-wrapper {
+  background: linear-gradient(to bottom, #103e46, #103e468c);
+  height: auto;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
 }
 
 .presskit-container {
+  height: auto;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 2rem;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
@@ -510,7 +488,6 @@ h1.headline {
 .presskit-left h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #6DD1FF;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -541,14 +518,13 @@ h1.headline {
   margin-top: 1rem;
   font-family: 'NavFont', sans-serif;
   font-weight: 800;
-  color: #6DD1FF;
+  color: #EEE1D0;
   letter-spacing: 0.03em;
 }
 
 .factsheet-list dd {
   display: block;
   margin: 0.15rem 0 0.75rem 0;
-  color: #ffffff;
 }
 
 /* Right Column Styles */
@@ -561,7 +537,6 @@ h1.headline {
 .presskit-right h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #6DD1FF;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -613,14 +588,12 @@ h1.headline {
 
 .presskit-assets h3 {
   font-size: 1.25rem;
-  color: #6DD1FF;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .presskit-assets h4 {
   font-size: 1rem;
-  color: #6DD1FF;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
@@ -628,29 +601,38 @@ h1.headline {
 
 .asset-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0.75rem;
 }
 
 .asset-grid>a {
-  border: 2px solid var(--color-card-border);
-  border-radius: 6px;
+  /* border: 2px solid var(--color-card-border); */
+  border-radius: 10px;
   overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease;
   position: relative;
-  /* enable overlay button positioning */
+  transition: transform 0.2s ease, border-radius 0.2s ease;
+}
+
+.asset-grid img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.asset-grid img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item-company {
+  max-height: 180px;
 }
 
 .asset-grid>a:hover {
   border-color: #6DD1FF;
+  border-radius: 0px;
   transform: translateY(-2px);
-}
-
-.asset-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Per-thumbnail download button (presskit assets) */
@@ -693,34 +675,54 @@ h1.headline {
 
 /* Footer */
 .presskit-footer {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #0a212548;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  margin-top: 2rem;
 }
 
-.presskit-contact h3 {
-  font-size: 1rem;
-  color: #6DD1FF;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+/* Presskit Social Icons */
+.presskit-social-icon {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.presskit-social-icon svg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  fill: white;
+  transition: fill 0.2s ease;
+}
+
+.presskit-social-icon:hover {
+  transform: scale(1.5);
+}
+
+.presskit-social-icon:hover svg path {
+  fill: var(--color-primary) !important;
 }
 
 .presskit-social {
+  margin-top: .65rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.presskit-social a {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.2s;
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
 
-.presskit-social a:hover {
-  color: var(--color-primary);
+li {
+  margin-bottom: 0.5rem;
 }
 
 /* Mobile responsive */
@@ -728,12 +730,6 @@ h1.headline {
   .presskit-container {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .presskit-footer {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
   }
 
   .image-grid {

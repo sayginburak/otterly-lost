@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,166 +13,271 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    referrerpolicy="no-referrer">
 
   <!-- Main Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="presskit-page">
+  <div class="video-bg">
+    <video autoplay muted loop playsinline disablePictureInPicture
+      controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" oncontextmenu="return false;"
+      poster="assets/background-fallback.png">
+      <source src="assets/bg/background.mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <!-- Main Content -->
-  <main class="presskit-container" id="press-kit">
-    <!-- Left Column -->
-    <aside class="presskit-left">
-      <img src="assets/logo.png" alt="Otterly Lost Logo" class="presskit-logo">
 
-      <section class="factsheet">
-        <h3>Factsheet</h3>
-        <dl class="factsheet-list">
-          <dt>Developer</dt>
-          <dd>Soulworks Interactive</dd>
+  <div class="presskit-wrapper">
+    <div class="presskit-header">
+      <img src="assets/presskitheader.png" alt="Capsule Header" class="presskit-header">
+    </div>
 
-          <dt>Release Date</dt>
-          <dd>TBA 2026</dd>
+    <!-- Main Content -->
+    <main class="presskit-container" id="press-kit">
+      <!-- Left Column -->
+      <aside class="presskit-left">
+        <!-- <img src="assets/logo.png" alt="Otterly Lost Logo" class="presskit-logo"> -->
 
-          <dt>Platforms</dt>
-          <dd>PC (Steam) • Additional platforms TBA</dd>
+        <section class="factsheet">
+          <h3>About</h3>
+          <dl class="factsheet-list">
+            <dt>Developer</dt>
+            <dd>Soulworks Interactive</dd>
 
-          <dt>Steam Page</dt>
-          <dd><a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank" rel="noopener">Otterly Lost on Steam</a></dd>
-        </dl>
-      </section>
+            <dt>Release Date</dt>
+            <dd>TBA 2026</dd>
 
-      <section>
-        <h3>Press / Business Contact</h3>
-        <p><a href="mailto:press@soulworksinteractive.com">press@soulworksinteractive.com</a></p>
-      </section>
+            <dt>Platforms</dt>
+            <dd>PC (Steam) • Additional platforms TBA</dd>
 
-      <section>
-        <h3>Social</h3>
-        <div class="presskit-social">
-          <a href="https://x.com/SoulworksInt" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
-          <a href="https://www.tiktok.com/@soulworksinteractive" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://www.instagram.com/soulworksinteractive/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://bsky.app/profile/soulworksint.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><i class="fas fa-cloud"></i></a>
-        </div>
-      </section>
+            <dt>Steam Page</dt>
+            <dd><a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank"
+                rel="noopener">Otterly Lost on Steam</a></dd>
 
-      
-    </aside>
+            <dt>Website</dt>
+            <dd><a href="https://otterlylost.com/" rel="noopener">otterlylost.com</a></dd>
+          </dl>
+        </section>
 
-    <!-- Right Column -->
-    <div class="presskit-right">
-      <section>
-        <h3>Description</h3>
-        <p>
-          Otterly Lost is a cozy, story-rich adventure set on a lush, mysterious island.
-          Play as Otto, a courageous little sea otter separated from his raft during a sudden storm.
-          Glide through canyons, dive beneath shimmering waves and befriend a cast of memorable animals
-          while you search for a way back home – and maybe save the island along the way.
-        </p>
-      </section>
+        <section>
+          <h3>CONTACT</h3>
+          <p><a href="mailto:press@soulworksinteractive.com">press@soulworksinteractive.com</a></p>
+        </section>
 
-      <section>
-        <h3>Key Features</h3>
-        <ul>
-          <li>Explore vibrant forests, sun-kissed beaches and colourful coral reefs at your own pace.</li>
-          <li>Dive into underwater caverns and forgotten shipwrecks in a seamless, open environment.</li>
-          <li>Gather treasures &amp; gear that unlock new traversal abilities and playful customisation.</li>
-          <li>Meet a charming cast of island animals and help them restore the balance of nature.</li>
-          <li>Solve gentle puzzles and platforming challenges designed for pure laid-back fun.</li>
-        </ul>
-      </section>
+        <section>
+          <h3>SOCIALS</h3>
+          <div class="presskit-social">
 
-      <section class="video-links">
-        <h3>Trailer</h3>
-        <div class="trailer">
-          <div class="trailer-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/JfXX7put_9I"
-              title="Otterly Lost – Announcement Trailer"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <a href="https://x.com/SoulworksInt" target="_blank" rel="noopener" aria-label="Twitter">
+              <span class="presskit-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" fill="currentColor">
+                  <path xmlns="http://www.w3.org/2000/svg"
+                    d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
+                </svg>
+              </span>
+            </a>
+
+            <a href="https://bsky.app/profile/soulworksint.bsky.social" target="_blank" rel="noopener"
+              aria-label="Bluesky">
+              <span class="presskit-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" fill="currentColor">
+                  <path xmlns="http://www.w3.org/2000/svg"
+                    d="M135.72,44.03C202.216,93.951 273.74,195.17 300,249.49C326.262,195.174 397.782,93.95 464.28,44.03C512.26,8.009 590,-19.862 590,68.825C590,86.537 579.845,217.615 573.889,238.895C553.186,312.879 477.745,331.749 410.639,320.328C527.939,340.292 557.779,406.42 493.336,472.548C370.946,598.138 317.426,441.037 303.706,400.782C301.192,393.402 300.016,389.95 299.998,392.886C299.981,389.95 298.805,393.402 296.291,400.782C282.577,441.037 229.058,598.142 106.661,472.548C42.217,406.42 72.056,340.288 189.358,320.328C122.25,331.749 46.808,312.879 26.108,238.895C20.151,217.613 9.997,86.535 9.997,68.825C9.997,-19.862 87.739,8.009 135.717,44.03L135.72,44.03Z" />
+                </svg>
+              </span>
+            </a>
+
+            <a href="https://www.tiktok.com/@soulworksinteractive" target="_blank" rel="noopener" aria-label="TikTok">
+              <span class="presskit-social-icon">
+                <svg viewBox="0 0 1985 2207" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                  <g transform="matrix(1,0,0,1,-694.657,-693.656)">
+                    <g id="TikTok" transform="matrix(4.16667,0,0,4.16667,0,0)">
+                      <g id="Blue" transform="matrix(1,0,0,1,549.993,545.973)">
+                        <path
+                          d="M0,-277.24C20.023,-256.594 44.992,-244.012 70.157,-238.285L70.157,-253.789C46.512,-255.465 21.776,-262.905 0,-277.24M-144.639,-379.496L-144.639,-32.8C-144.639,12.621 -177.283,41.837 -216.977,41.837C-230.144,41.837 -242.648,38.76 -253.517,33.072C-239.727,50.68 -217.951,60.808 -194.072,60.808C-154.377,60.808 -121.733,31.592 -121.733,-13.868L-121.733,-360.564L-58.821,-360.564C-60.535,-366.602 -61.938,-372.913 -63.029,-379.496L-144.639,-379.496ZM-196.253,-177.945L-196.253,-195.124C-204.2,-196.448 -212.147,-196.877 -218.73,-196.877C-308.287,-196.877 -383.275,-125.006 -383.275,-35.877C-383.275,22.633 -354.799,72.65 -311.52,102.256C-341.671,72.339 -360.369,30.463 -360.369,-16.945C-360.369,-105.918 -285.615,-177.75 -196.253,-177.945"
+                          style="fill:rgb(45,204,211);fill-rule:nonzero;" />
+                      </g>
+                      <g id="Red" transform="matrix(1,0,0,1,496.196,373.956)">
+                        <path
+                          d="M0,133.731C0,244.44 -84.687,303.106 -164.505,303.106C-199.058,303.106 -231.157,292.666 -257.724,274.513C-227.885,304.118 -186.826,322.038 -141.6,322.038C-61.782,322.038 22.905,263.372 22.905,152.663L22.905,-27.736C14.959,-33.112 7.323,-39.383 0,-46.707L0,133.731ZM-199.72,205.33C-209.459,193.02 -215.263,177.087 -215.263,158.389C-215.263,105.917 -174.244,78.182 -119.552,83.947L-119.552,-3.935C-127.498,-5.259 -135.445,-5.688 -142.067,-5.688L-142.457,-5.688L-142.457,64.976C-197.149,59.25 -238.169,86.946 -238.169,139.457C-238.169,170.153 -222.47,193.448 -199.72,205.33M123.954,-66.028L123.954,-0.39C87.609,-0.39 53.212,-7.324 22.905,-27.736C58.198,7.557 101.009,18.581 146.859,18.581L146.859,-62.6C139.302,-63.107 131.589,-64.236 123.954,-66.028M53.796,-104.983C34.436,-124.889 19.672,-152.313 13.673,-188.307L-5.025,-188.307C5.648,-149.391 27.619,-122.24 53.796,-104.983"
+                          style="fill:rgb(241,32,74);fill-rule:nonzero;" />
+                      </g>
+                      <g id="White" transform="matrix(1,0,0,1,331.691,185.65)">
+                        <path
+                          d="M0,491.412C79.818,491.412 164.505,432.746 164.505,322.037L164.505,141.6C171.829,148.923 179.464,155.195 187.411,160.57C217.717,180.983 252.114,187.917 288.459,187.917L288.459,122.278C263.294,116.552 238.324,103.969 218.302,83.324C192.124,66.066 170.154,38.915 159.48,0L96.568,0L96.568,346.696C96.568,392.156 63.924,421.372 24.23,421.372C0.35,421.372 -21.425,411.244 -35.215,393.636C-57.965,381.755 -73.663,358.46 -73.663,327.764C-73.663,275.253 -32.644,247.556 22.048,253.282L22.048,182.619C-67.314,182.814 -142.068,254.646 -142.068,343.618C-142.068,391.026 -123.37,432.902 -93.218,462.819C-66.651,480.972 -34.553,491.412 0,491.412"
+                          style="fill:white;fill-rule:nonzero;" />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </a>
+
+            <a href="https://www.instagram.com/soulworksinteractive/" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <span class="presskit-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor">
+                  <path xmlns="http://www.w3.org/2000/svg"
+                    d="M295.42,6c-53.2,2.51-89.53,11-121.29,23.48-32.87,12.81-60.73,30-88.45,57.82S40.89,143,28.17,175.92c-12.31,31.83-20.65,68.19-23,121.42S2.3,367.68,2.56,503.46,3.42,656.26,6,709.6c2.54,53.19,11,89.51,23.48,121.28,12.83,32.87,30,60.72,57.83,88.45S143,964.09,176,976.83c31.8,12.29,68.17,20.67,121.39,23s70.35,2.87,206.09,2.61,152.83-.86,206.16-3.39S799.1,988,830.88,975.58c32.87-12.86,60.74-30,88.45-57.84S964.1,862,976.81,829.06c12.32-31.8,20.69-68.17,23-121.35,2.33-53.37,2.88-70.41,2.62-206.17s-.87-152.78-3.4-206.1-11-89.53-23.47-121.32c-12.85-32.87-30-60.7-57.82-88.45S862,40.87,829.07,28.19c-31.82-12.31-68.17-20.7-121.39-23S637.33,2.3,501.54,2.56,348.75,3.4,295.42,6m5.84,903.88c-48.75-2.12-75.22-10.22-92.86-17-23.36-9-40-19.88-57.58-37.29s-28.38-34.11-37.5-57.42c-6.85-17.64-15.1-44.08-17.38-92.83-2.48-52.69-3-68.51-3.29-202s.22-149.29,2.53-202c2.08-48.71,10.23-75.21,17-92.84,9-23.39,19.84-40,37.29-57.57s34.1-28.39,57.43-37.51c17.62-6.88,44.06-15.06,92.79-17.38,52.73-2.5,68.53-3,202-3.29s149.31.21,202.06,2.53c48.71,2.12,75.22,10.19,92.83,17,23.37,9,40,19.81,57.57,37.29s28.4,34.07,37.52,57.45c6.89,17.57,15.07,44,17.37,92.76,2.51,52.73,3.08,68.54,3.32,202s-.23,149.31-2.54,202c-2.13,48.75-10.21,75.23-17,92.89-9,23.35-19.85,40-37.31,57.56s-34.09,28.38-57.43,37.5c-17.6,6.87-44.07,15.07-92.76,17.39-52.73,2.48-68.53,3-202.05,3.29s-149.27-.25-202-2.53m407.6-674.61a60,60,0,1,0,59.88-60.1,60,60,0,0,0-59.88,60.1M245.77,503c.28,141.8,115.44,256.49,257.21,256.22S759.52,643.8,759.25,502,643.79,245.48,502,245.76,245.5,361.22,245.77,503m90.06-.18a166.67,166.67,0,1,1,167,166.34,166.65,166.65,0,0,1-167-166.34" />
+                </svg>
+              </span>
+            </a>
+
+            <a href="https://www.youtube.com/@SoulworksInteractive" target="_blank" rel="noopener" aria-label="YouTube">
+              <span class="presskit-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397 278" fill="currentColor">
+                  <path xmlns="http://www.w3.org/2000/svg"
+                    d="M158.728,198.635L158.728,79.589L261.556,138.967L158.728,198.635ZM388.134,43.673C383.498,26.583 370.464,13.259 353.085,8.624C322.382,0.224 198.121,0.224 198.121,0.224C198.121,0.224 74.15,0.224 43.448,8.624C26.358,13.259 13.034,26.583 8.109,43.673C0,74.375 0,138.967 0,138.967C0,138.967 0,203.559 8.109,234.552C13.034,251.352 26.358,264.965 43.448,269.6C74.15,278 198.121,278 198.121,278C198.121,278 322.382,278 353.085,269.6C370.464,264.965 383.498,251.352 388.134,234.552C396.532,203.559 396.532,138.967 396.532,138.967C396.532,138.967 396.532,74.375 388.134,43.673Z" />
+                </svg>
+              </span>
+            </a>
+
+            <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener" aria-label="Discord">
+              <span class="presskit-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.644 96" fill="currentColor">
+                  <path xmlns="http://www.w3.org/2000/svg"
+                    d="M81.15,0c-1.2376,2.1973-2.3489,4.4704-3.3591,6.794-9.5975-1.4396-19.3718-1.4396-28.9945,0-.985-2.3236-2.1216-4.5967-3.3591-6.794-9.0166,1.5407-17.8059,4.2431-26.1405,8.0568C2.779,32.5304-1.6914,56.3725.5312,79.8863c9.6732,7.1476,20.5083,12.603,32.0505,16.0884,2.6014-3.4854,4.8998-7.1981,6.8698-11.0623-3.738-1.3891-7.3497-3.1318-10.8098-5.1523.9092-.6567,1.7932-1.3386,2.6519-1.9953,20.281,9.547,43.7696,9.547,64.0758,0,.8587.7072,1.7427,1.3891,2.6519,1.9953-3.4601,2.0457-7.0718,3.7632-10.835,5.1776,1.97,3.8642,4.2683,7.5769,6.8698,11.0623,11.5419-3.4854,22.3769-8.9156,32.0509-16.0631,2.626-27.2771-4.496-50.9172-18.817-71.8548C98.9811,4.2684,90.1918,1.5659,81.1752.0505l-.0252-.0505ZM42.2802,65.4144c-6.2383,0-11.4159-5.6575-11.4159-12.6535s4.9755-12.6788,11.3907-12.6788,11.5169,5.708,11.4159,12.6788c-.101,6.9708-5.026,12.6535-11.3907,12.6535ZM84.3576,65.4144c-6.2637,0-11.3907-5.6575-11.3907-12.6535s4.9755-12.6788,11.3907-12.6788,11.4917,5.708,11.3906,12.6788c-.101,6.9708-5.026,12.6535-11.3906,12.6535Z" />
+                </svg>
+              </span>
+            </a>
+
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Column -->
+      <div class="presskit-right">
+        <section>
+          <h3>DESCRIPTION</h3>
+          <p>
+            Otterly Lost is a cozy, story-rich adventure set on a lush, mysterious island. Play as Otto, a courageous
+            little sea otter separated from his raft during a sudden storm. Glide through canyons, dive beneath
+            shimmering waves and befriend a cast of memorable animals while you search for a way back home – and maybe
+            save the island along the way.
+          </p>
+        </section>
+
+        <section>
+          <h3>KEY FEATURES</h3>
+          <ul>
+            <li>Explore vibrant forests, sun-kissed beaches and colourful coral reefs at your own pace.</li>
+            <li>Dive into underwater caverns and forgotten shipwrecks in a seamless, open environment.</li>
+            <li>Gather treasures &amp; gear that unlock new traversal abilities and playful customisation.</li>
+            <li>Meet a charming cast of island animals and help them restore the balance of nature.</li>
+            <li>Solve gentle puzzles and platforming challenges designed for pure laid-back fun.</li>
+            <li>Express yourself by mixing and matching fun outfits.</li>
+          </ul>
+        </section>
+
+        <section class="video-links">
+          <h3>Trailer</h3>
+          <div class="trailer">
+            <div class="trailer-wrapper">
+              <iframe src="https://www.youtube.com/embed/JfXX7put_9I" title="Otterly Lost – Announcement Trailer"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Full-width assets section spanning both columns -->
+      <section class="presskit-assets">
+        <h3>PRESS ASSETS</h3>
+
+        <div class="assets-group">
+          <div class="asset-grid">
+            <a href="assets/otterlylost_logo.png" class="gallery-item" download>
+              <img src="assets/otterlylost_logo.png" alt="Otterly Lost Logo">
+            </a>
+            <a href="assets/press/soulworksinteractive_logo.png" class="gallery-item-company" download>
+              <img src="assets/press/soulworksinteractive_logo.png" alt="Soulworks Interactive Logo">
+            </a>
+            <a href="assets/press/store_capsule_header.png" class="gallery-item" download>
+              <img src="assets/press/store_capsule_header.png" alt="Otterly Lost Store Capsule Header">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_01.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_01.png" alt="Otterly Lost – Screenshot 1">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_02.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_02.png" alt="Otterly Lost – Screenshot 2">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_03.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_03.png" alt="Otterly Lost – Screenshot 3">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_04.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_04.png" alt="Otterly Lost – Screenshot 4">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_05.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_05.png" alt="Otterly Lost – Screenshot 5">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_06.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_06.png" alt="Otterly Lost – Screenshot 6">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_07.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_07.png" alt="Otterly Lost – Screenshot 7">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_08.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_08.png" alt="Otterly Lost – Screenshot 8">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_09.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_09.png" alt="Otterly Lost – Screenshot 9">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_10.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_10.png" alt="Otterly Lost – Screenshot 10">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_11.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_11.png" alt="Otterly Lost – Screenshot 11">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_12.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_12.png" alt="Otterly Lost – Screenshot 12">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_13.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_13.png" alt="Otterly Lost – Screenshot 13">
+            </a>
+            <a href="assets/screenshots/OtterlyLost_14.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_14.png" alt="Otterly Lost – Screenshot 14">
+            </a>
+            <!-- <a href="assets/screenshots/OtterlyLost_15.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_15.png" alt="Otterly Lost – Screenshot 15">
+            </a> -->
+            <a href="assets/screenshots/OtterlyLost_16.png" class="gallery-item" download>
+              <img src="assets/screenshots/OtterlyLost_16.png" alt="Otterly Lost – Screenshot 16">
+            </a>
           </div>
         </div>
       </section>
+    </main>
+
+    <!-- Lightbox (same structure as landing page, with download button) -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close">&times;</button>
+      <button class="lightbox-nav prev"><i class="fa-solid fa-angle-left"></i></button>
+      <button class="lightbox-nav next"><i class="fa-solid fa-angle-right"></i></button>
+      <a class="lightbox-download" href="#" download aria-label="Download image">
+        <i class="fa-solid fa-download"></i>
+      </a>
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-image">
+      </div>
     </div>
-    
-    <!-- Full-width assets section spanning both columns -->
-    <section class="presskit-assets">
-      <h3>Press Assets</h3>
 
-      <div class="assets-group">
-        <h4>GIF Assets</h4>
-        <div class="asset-grid">
-          <!-- Add GIF previews here when available -->
-        </div>
+    <!-- Footer -->
+    <footer class="presskit-footer container">
+      <div class="presskit-contact">
+        <!-- <h3>Contact</h3>
+        <p>press@soulworksinteractive.com</p> -->
+        <small>&copy; 2025 Soulworks Interactive</small>
       </div>
-
-      <div class="assets-group">
-        <h4>Screenshots</h4>
-        <div class="asset-grid">
-          <a href="assets/screenshots/OtterlyLost_01.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_01.png" alt="Otterly Lost – Screenshot 1">
-          </a>
-          <a href="assets/screenshots/OtterlyLost_02.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_02.png" alt="Otterly Lost – Screenshot 2">
-          </a>
-          <a href="assets/screenshots/OtterlyLost_03.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_03.png" alt="Otterly Lost – Screenshot 3">
-          </a>
-          <a href="assets/screenshots/OtterlyLost_04.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_04.png" alt="Otterly Lost – Screenshot 4">
-          </a>
-          <a href="assets/screenshots/OtterlyLost_05.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_05.png" alt="Otterly Lost – Screenshot 5">
-          </a>
-          <a href="assets/screenshots/OtterlyLost_06.png" class="gallery-item" download>
-            <img src="assets/screenshots/OtterlyLost_06.png" alt="Otterly Lost – Screenshot 6">
-          </a>
-        </div>
-      </div>
-
-      <div class="assets-group">
-        <h4>Logo &amp; Icons</h4>
-        <div class="asset-grid">
-          <a href="assets/logo.png" class="gallery-item" download>
-            <img src="assets/logo.png" alt="Otterly Lost Logo">
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Lightbox (same structure as landing page, with download button) -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <button class="lightbox-nav prev"><i class="fa-solid fa-angle-left"></i></button>
-    <button class="lightbox-nav next"><i class="fa-solid fa-angle-right"></i></button>
-    <a class="lightbox-download" href="#" download aria-label="Download image">
-      <i class="fa-solid fa-download"></i>
-    </a>
-    <div class="lightbox-content">
-      <img src="" alt="" class="lightbox-image">
-    </div>
+    </footer>
   </div>
-
-  <!-- Footer -->
-  <footer class="presskit-footer container">
-    <div class="presskit-contact">
-      <h3>Contact</h3>
-      <p>press@soulworksinteractive.com</p>
-    </div>
-    <div class="presskit-social">
-      <a href="https://x.com/SoulworksInt" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://discord.gg/PkcwMmJ7G8" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
-      <a href="https://store.steampowered.com/app/3861710/Otterly_Lost/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
