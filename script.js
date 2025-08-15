@@ -191,27 +191,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------
   // Carousel (on-page slider)
   // ----------------------------
-  const carouselImg = document.querySelector('.carousel-image');
+  const carouselFrame = document.querySelector('.carousel-frame');
   const carouselPrev = document.querySelector('.carousel-nav.prev');
   const carouselNext = document.querySelector('.carousel-nav.next');
 
-  if (carouselImg && carouselPrev && carouselNext && galleryItems.length) {
+  if (carouselFrame && carouselPrev && carouselNext && galleryItems.length) {
     let slideIndex = 0;
 
     function showSlide(idx) {
       slideIndex = (idx + galleryItems.length) % galleryItems.length;
-      const imgSrc = galleryItems[slideIndex].href;
-      const imgAlt = galleryItems[slideIndex].querySelector('img').alt;
-      carouselImg.src = imgSrc;
-      carouselImg.alt = imgAlt;
+      const anchorEl = galleryItems[slideIndex];
+      const pictureEl = anchorEl.querySelector('picture');
+      let nodeToInsert;
+      if (pictureEl) {
+        nodeToInsert = pictureEl.cloneNode(true);
+        // Prefer large variant in carousel
+        nodeToInsert.querySelectorAll('source').forEach(src => src.setAttribute('sizes', '100vw'));
+      } else {
+        nodeToInsert = anchorEl.querySelector('img').cloneNode(true);
+      }
+      // Ensure accessibility
+      const imgEl = nodeToInsert.querySelector ? (nodeToInsert.querySelector('img') || nodeToInsert) : nodeToInsert;
+      if (imgEl && anchorEl.querySelector('img')) {
+        imgEl.alt = anchorEl.querySelector('img').alt || '';
+      }
+      carouselFrame.innerHTML = '';
+      carouselFrame.appendChild(nodeToInsert);
     }
 
     carouselPrev.addEventListener('click', () => showSlide(slideIndex - 1));
     carouselNext.addEventListener('click', () => showSlide(slideIndex + 1));
 
     // Clicking carousel opens lightbox
-    carouselImg.addEventListener('click', () => {
-      openLightbox(slideIndex);
+    carouselFrame.addEventListener('click', () => openLightbox(slideIndex));
+    carouselFrame.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') openLightbox(slideIndex);
     });
 
     // Initialize

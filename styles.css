@@ -769,13 +769,12 @@ li {
   margin: auto;
 }
 
-.carousel-image {
+.carousel-frame {
   width: 100%;
   cursor: pointer;
   border: 0px solid var(--color-card-border);
   border-radius: 0px;
   display: block;
-  object-fit: cover;
 }
 
 .carousel-nav {
