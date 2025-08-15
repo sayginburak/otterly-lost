@@ -499,6 +499,12 @@ h1.headline {
   margin-bottom: 0.5rem;
 }
 
+.download-all {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.download-all a,
 .presskit-left a {
   color: var(--color-primary);
   text-decoration: underline;
@@ -613,6 +619,7 @@ h1.headline {
   transition: transform 0.2s ease, border-radius 0.2s ease;
 }
 
+.asset-grid video,
 .asset-grid img {
   object-fit: contain;
   width: 100%;
@@ -621,6 +628,7 @@ h1.headline {
   transition: transform 0.5s ease;
 }
 
+.asset-grid video:hover,
 .asset-grid img:hover {
   transform: scale(1.05);
 }
@@ -632,7 +640,6 @@ h1.headline {
 .asset-grid>a:hover {
   border-color: #6DD1FF;
   border-radius: 0px;
-  transform: translateY(-2px);
 }
 
 /* Per-thumbnail download button (presskit assets) */
@@ -936,16 +943,19 @@ li {
   pointer-events: none;
 }
 
-.video-bg video,
-.gif1 video,
-.gif2 video,
-.gif3 video,
-.gif4 video {
+.video-bg video{
   pointer-events: none;
   overflow: hidden;
 }
 
-video {
+.gif1,
+.gif2,
+.gif3,
+.gif4 {
+  overflow:hidden;
+}
+
+/* video {
   pointer-events: none;
 }
 
@@ -960,7 +970,7 @@ video::-webkit-media-controls-enclosure {
 
 video::-webkit-media-controls-overlay-enclosure {
   display: none !important;
-}
+} */
 
 /* Go Top Button */
 
