@@ -775,6 +775,19 @@ li {
   border: 0px solid var(--color-card-border);
   border-radius: 0px;
   display: block;
+  /* Reserve aspect ratio to prevent layout jump while swapping */
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  min-height: 240px;
+}
+
+/* Natural flow for new image */
+.carousel-frame picture,
+.carousel-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .carousel-nav {

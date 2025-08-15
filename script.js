@@ -197,8 +197,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (carouselFrame && carouselPrev && carouselNext && galleryItems.length) {
     let slideIndex = 0;
+    const CAROUSEL_FADE_MS = 180;
+    let isTransitioning = false;
+    let pendingIndex = null;
+    let transitionToken = 0;
 
-    function showSlide(idx) {
+    function startTransitionTo(idx) {
+      isTransitioning = true;
+      transitionToken += 1;
+      const localToken = transitionToken;
       slideIndex = (idx + galleryItems.length) % galleryItems.length;
       const anchorEl = galleryItems[slideIndex];
       const pictureEl = anchorEl.querySelector('picture');
@@ -215,12 +222,105 @@ document.addEventListener('DOMContentLoaded', () => {
       if (imgEl && anchorEl.querySelector('img')) {
         imgEl.alt = anchorEl.querySelector('img').alt || '';
       }
-      carouselFrame.innerHTML = '';
+      const previousChild = carouselFrame.firstElementChild;
+
+      // Prepare new node styles for fade; position in normal flow
+      nodeToInsert.style.opacity = '0';
+      nodeToInsert.style.transition = `opacity ${CAROUSEL_FADE_MS}ms ease`;
+
+      // If there is no previous child, append baseline placeholder so frame has a child
+      if (!previousChild) {
+        // Create a lightweight spacer so the first child can be absolutely positioned without collapsing
+        const spacer = document.createElement('div');
+        spacer.style.opacity = '0';
+        spacer.style.height = '1px';
+        carouselFrame.appendChild(spacer);
+      }
+
       carouselFrame.appendChild(nodeToInsert);
+
+      let transitioned = false;
+      const startTransition = () => {
+        if (transitioned) return;
+        transitioned = true;
+        // If a newer transition started, abort this one and clean up
+        if (localToken !== transitionToken) {
+          if (nodeToInsert.parentNode === carouselFrame) {
+            carouselFrame.removeChild(nodeToInsert);
+          }
+          return;
+        }
+        requestAnimationFrame(() => {
+          nodeToInsert.style.opacity = '1';
+          if (previousChild) {
+            // Absolutely position the outgoing child so it sits on top and can fade away
+            previousChild.style.position = 'absolute';
+            previousChild.style.inset = '0';
+            previousChild.style.width = '100%';
+            previousChild.style.height = '100%';
+            previousChild.style.transition = `opacity ${CAROUSEL_FADE_MS}ms ease`;
+            previousChild.style.opacity = '0';
+            setTimeout(() => {
+              if (previousChild.parentNode === carouselFrame) {
+                carouselFrame.removeChild(previousChild);
+              }
+              // End of transition
+              if (localToken === transitionToken) {
+                isTransitioning = false;
+                if (pendingIndex !== null) {
+                  const toGo = pendingIndex;
+                  pendingIndex = null;
+                  startTransitionTo(toGo);
+                }
+              }
+            }, CAROUSEL_FADE_MS);
+          } else {
+            // Remove spacer if present
+            const maybeSpacer = carouselFrame.firstElementChild;
+            if (maybeSpacer && maybeSpacer !== nodeToInsert && maybeSpacer.style && maybeSpacer.style.opacity === '0') {
+              carouselFrame.removeChild(maybeSpacer);
+            }
+            // End of transition
+            if (localToken === transitionToken) {
+              isTransitioning = false;
+              if (pendingIndex !== null) {
+                const toGo = pendingIndex;
+                pendingIndex = null;
+                startTransitionTo(toGo);
+              }
+            }
+          }
+        });
+      };
+
+      // Prefer decode() for reliable readiness
+      const targetImg = nodeToInsert.querySelector ? (nodeToInsert.querySelector('img') || null) : null;
+      if (targetImg && typeof targetImg.decode === 'function') {
+        targetImg.decode().then(startTransition).catch(startTransition);
+        // Absolute safety timeout just in case
+        setTimeout(startTransition, 1500);
+      } else if (targetImg) {
+        if (targetImg.complete && targetImg.naturalWidth > 0) {
+          startTransition();
+        } else {
+          targetImg.onload = () => startTransition();
+          setTimeout(startTransition, 1500);
+        }
+      } else {
+        startTransition();
+      }
     }
 
-    carouselPrev.addEventListener('click', () => showSlide(slideIndex - 1));
-    carouselNext.addEventListener('click', () => showSlide(slideIndex + 1));
+    function requestSlide(targetIdx) {
+      if (isTransitioning) {
+        pendingIndex = targetIdx;
+        return;
+      }
+      startTransitionTo(targetIdx);
+    }
+
+    carouselPrev.addEventListener('click', () => requestSlide(slideIndex - 1));
+    carouselNext.addEventListener('click', () => requestSlide(slideIndex + 1));
 
     // Clicking carousel opens lightbox
     carouselFrame.addEventListener('click', () => openLightbox(slideIndex));
@@ -229,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize
-    showSlide(0);
+    requestSlide(0);
   }
 
   // ----------------------------
