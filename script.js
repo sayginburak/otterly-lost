@@ -5,39 +5,73 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = lightbox.querySelector('.prev');
   const nextBtn = lightbox.querySelector('.next');
   const downloadBtn = lightbox.querySelector('.lightbox-download');
+  const lightboxContent = lightbox.querySelector('.lightbox-content');
   const galleryItems = document.querySelectorAll('.gallery-item, .gallery-item-company');
   let currentIndex = 0;
   const FADE_MS = 180;
 
   // Open lightbox
   function setImage(index) {
-    const imgSrc = galleryItems[index].href;
-    const imgAlt = galleryItems[index].querySelector('img').alt;
+    const anchorEl = galleryItems[index];
+    const pngHref = anchorEl.href; // keep PNG for download
+    const imgAlt = (anchorEl.querySelector('img') && anchorEl.querySelector('img').alt) || '';
 
-    const applySrc = () => {
-      lightboxImg.src = imgSrc;
-      lightboxImg.alt = imgAlt;
-      if (downloadBtn) {
-        downloadBtn.href = imgSrc;
-        downloadBtn.setAttribute('download', '');
-      }
-    };
+    // Prepare the node to display in lightbox (clone <picture> if present, otherwise clone <img>)
+    const pictureEl = anchorEl.querySelector('picture');
+    let nodeToInsert;
+    let imgInside;
 
-    // Ensure previous load handlers do not stack
-    lightboxImg.onload = () => {
+    if (pictureEl) {
+      nodeToInsert = pictureEl.cloneNode(true);
+      imgInside = nodeToInsert.querySelector('img');
+      // Ensure the lightbox uses large responsive selection
+      nodeToInsert.style.display = 'block';
+      nodeToInsert.style.width = '100%';
+      nodeToInsert.querySelectorAll('source').forEach(src => {
+        if (src.hasAttribute('srcset')) {
+          src.setAttribute('sizes', '90vw');
+        }
+      });
+    } else {
+      imgInside = anchorEl.querySelector('img').cloneNode(true);
+      nodeToInsert = imgInside;
+    }
+
+    if (imgInside) {
+      imgInside.classList.add('lightbox-image');
+      imgInside.alt = imgAlt;
+      imgInside.style.width = '100%';
+      imgInside.style.height = 'auto';
+      imgInside.style.opacity = '0';
+      imgInside.onload = () => {
+        requestAnimationFrame(() => {
+          imgInside.style.opacity = '1';
+        });
+      };
+    }
+
+    // Update download to PNG
+    if (downloadBtn) {
+      downloadBtn.href = pngHref;
+      downloadBtn.setAttribute('download', '');
+    }
+
+    // Swap content with a short fade if already visible
+    const previousImg = lightboxContent.querySelector('.lightbox-image');
+    const doSwap = () => {
+      lightboxContent.innerHTML = '';
+      lightboxContent.appendChild(nodeToInsert);
+      // Fallback to ensure visibility even if onload doesn't fire (cached)
       requestAnimationFrame(() => {
-        lightboxImg.style.opacity = '1';
+        if (imgInside) imgInside.style.opacity = '1';
       });
     };
 
-    // If already visible, do a short fade-out before swapping
-    if (lightbox.classList.contains('active')) {
-      lightboxImg.style.opacity = '0';
-      setTimeout(applySrc, Math.min(FADE_MS, 120));
+    if (lightbox.classList.contains('active') && previousImg) {
+      previousImg.style.opacity = '0';
+      setTimeout(doSwap, Math.min(FADE_MS, 120));
     } else {
-      // First open: start from 0 and fade in when loaded
-      lightboxImg.style.opacity = '0';
-      applySrc();
+      doSwap();
     }
   }
 
@@ -51,8 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close lightbox
   function closeLightbox() {
     lightbox.classList.remove('active');
-    lightboxImg.src = '';
-    lightboxImg.alt = '';
+    // Clear any inserted content
+    if (lightboxContent) {
+      lightboxContent.innerHTML = '';
+    }
+    if (lightboxImg) {
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    }
     document.body.style.overflow = '';
   }
 
