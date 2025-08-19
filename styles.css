@@ -666,8 +666,9 @@ h1.headline {
   /* minimal fade */
 }
 
-.asset-download i {
-  font-size: 1.1rem;
+.asset-download svg {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .asset-grid>a:hover .asset-download {
@@ -927,8 +928,9 @@ li {
   transform: translateY(-2px);
 }
 
-.lightbox-download i {
-  font-size: 1.1rem;
+.lightbox-download svg {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 /*------------------------------------------------------------

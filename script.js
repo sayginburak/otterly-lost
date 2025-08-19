@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dl.setAttribute('role', 'button');
     dl.setAttribute('tabindex', '0');
     dl.setAttribute('aria-label', 'Download image');
-    dl.innerHTML = '<i class="fa-solid fa-download"></i>';
+    dl.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     dl.addEventListener('click', (ev) => {
       // Prevent both lightbox open and default navigation
