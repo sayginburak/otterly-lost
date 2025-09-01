@@ -156,7 +156,8 @@ h1.headline {
 .logo-wrapper .logo {
   width: 750px;
   max-width: 90%;
-  transform: translateX(3px);
+  height: auto;
+  margin: 0 auto;
 }
 
 /*------------------------------------------------------------
@@ -200,7 +201,7 @@ h1.headline {
   font-weight: 800;
   font-size: clamp(.1rem, 3.1vw, 2rem);
   text-align: center;
-  text-wrap: nowrap;
+  white-space: nowrap;
   width: 100%;
   margin-top: clamp(.5rem, 5vw, 1rem);
   margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
@@ -293,6 +294,7 @@ h1.headline {
   height: 190px;
   border: none;
   display: block;
+  overflow: hidden;
 }
 
 /*------------------------------------------------------------
@@ -745,12 +747,19 @@ li {
   }
 }
 
+/* Very small screens: allow headline wrap to avoid overflow */
+@media (max-width: 420px) {
+  .headline {
+    white-space: normal;
+  }
+}
+
 /*------------------------------------------------------------
   Gallery / Carousel
 ------------------------------------------------------------*/
 .gallery {
   margin: auto;
-  margin-top: clamp(-2.5rem, 3.5vw, -5.5rem);
+  margin-top: clamp(-5.5rem, -3.5vw, -2.5rem);
   margin-bottom: clamp(1rem, 3.5vw, 3rem);
 }
 
@@ -780,7 +789,7 @@ li {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  min-height: 240px;
+  min-height: 180px;
 }
 
 /* Natural flow for new image */
