@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize
-    requestSlide(0);
+    window.addEventListener('load', () => requestSlide(0));
   }
 
   // ----------------------------
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   if (headerEl) {
-    window.addEventListener('scroll', handleHeaderScroll);
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
     handleHeaderScroll();
   }
 
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scale slightly larger than 1 and move up
     video.style.transform = `scale(1.5) translateY(-${scrollY * 0.03}px)`;
-  });
+  }, { passive: true });
 
   const goTopBtn = document.getElementById('goTopBtn');
 
@@ -371,12 +371,36 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       goTopBtn.style.display = 'none';
     }
-  });
+  }, { passive: true });
 
   // Smooth scroll to top on click
   goTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  window.addEventListener('load', () => {
+    const bg = document.querySelector('.video-bg video');
+    if (bg) {
+      bg.play().catch(() => {});
+    }
+  });
 
+  const featureVideos = document.querySelectorAll('video.gif1, video.gif2, video.gif3, video.gif4');
+  if (featureVideos.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const v = entry.target;
+        if (entry.isIntersecting) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '200px 0px', threshold: 0.1 });
+  
+    featureVideos.forEach((v) => {
+      v.pause();
+      io.observe(v);
+    });
+  }  
 });

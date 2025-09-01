@@ -128,6 +128,7 @@ h1.headline {
   min-height: 100vh;
   object-fit: cover;
   transform: scale(1.5);
+  will-change: transform;
 }
 
 

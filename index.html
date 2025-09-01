@@ -8,6 +8,7 @@
   <title>Otterly Lost – Cozy Adventure</title>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/sayginburak/otterly-lost@latest/assets/otterlylost_logo.png" fetchpriority="high">
 
   <!-- Basic favicon -->
   <link rel="icon" href="assets/soulworks.jpg" type="image/x-icon">
@@ -34,7 +35,7 @@
 
 <body>
   <div class="video-bg">
-    <video autoplay muted loop playsinline disablePictureInPicture
+    <video muted loop playsinline preload="none" disablePictureInPicture
       controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" oncontextmenu="return false;"
       poster="assets/background-fallback.png">
       <source src="assets/bg/background.mp4" type="video/mp4">
@@ -43,7 +44,7 @@
 
   <div class="content-wrapper">
     <div class="logo-wrapper">
-      <img src="https://cdn.jsdelivr.net/gh/sayginburak/otterly-lost@latest/assets/otterlylost_logo.png" alt="Otterly Lost Logo" class="logo">
+      <img src="https://cdn.jsdelivr.net/gh/sayginburak/otterly-lost@latest/assets/otterlylost_logo.png" alt="Otterly Lost Logo" decoding="async" fetchpriority="high" class="logo">
     </div>
 
     <div class="wave-bg">
@@ -67,7 +68,7 @@
         </div>
         <div class="trailer">
           <div class="trailer-wrapper">
-            <iframe class="youtube-vid" width="100%" height="100%"
+            <iframe class="youtube-vid" width="100%" height="100%" loading="lazy"
               src="https://www.youtube.com/embed/JfXX7put_9I?si=lQWwkOyMGA1lm4zO" title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -79,7 +80,7 @@
       <!-- Features -->
       <section class="features container" id="about">
         <div class="steam-widget-wrapper">
-          <iframe class="steam-widget" scrolling="no"
+          <iframe class="steam-widget" title="Steam widget" loading="lazy" scrolling="no"
             src="https://store.steampowered.com/widget/3861710/?t=Play%20as%20Otto%2C%20a%20curious%20sea%20otter%20swept%20far%20from%20home.%20In%20this%20story-rich%20adventure%2C%20explore%20wild%20forests%2C%20dive%20underwater%2C%20glide%20over%20rocky%20canyons%2C%20and%20climb%20your%20way%20back.%20Meet%20friendly%20animals%2C%20complete%20heartfelt%20quests%2C%20and%20enjoy%20soft%20challenges%2C%20at%20your%20own%20pace!"
             frameborder="0" width="100%" height="190">
           </iframe>
@@ -120,7 +121,7 @@
             otter who got swept away from his mountain home after a strange and sudden natural disaster.
           </p>
 
-          <video class="gif1" autoplay muted loop playsinline disablePictureInPicture
+          <video class="gif1" muted loop playsinline preload="none" disablePictureInPicture
             poster="assets/gifs/general-fallback.png">
             <source src="assets/gifs/general.mp4" type="video/mp4" />
           </video>
@@ -142,7 +143,7 @@
           <h2>EXPLORE AT YOUR OWN PACE</h2>
           <p>It’s an open-world game, so you can go at your own pace and discover every corner of the island and the
             surrounding underwater.</p>
-          <video class="gif2" autoplay muted loop playsinline disablePictureInPicture
+          <video class="gif2" muted loop playsinline preload="none" disablePictureInPicture
             poster="assets/gifs/explore-fallback.png">
             <source src="assets/gifs/explore.mp4" type="video/mp4" />
           </video>
@@ -154,7 +155,7 @@
           <h2>HANDY TOOLS, SOFT CHALLENGES</h2>
           <p>Otters know a thing or two about using tools. As you explore the island, you’ll gather useful gear to help
             you out: dig up hidden shells, smash through obstacles blocking your way, and zip across tricky gaps.</p>
-          <video class="gif3" autoplay muted loop playsinline disablePictureInPicture
+          <video class="gif3" muted loop playsinline preload="none" disablePictureInPicture
             poster="assets/gifs/tools-fallback.png">
             <source src="assets/gifs/tools.mp4" type="video/mp4" />
           </video>
@@ -168,7 +169,7 @@
           <h2>MAKE FRIENDS ALONG THE WAY</h2>
           <p>Meet a lively bunch of island characters: funny, sweet, wise, bubbly, and even a little grumpy. Some could
             use your help, while others may guide you on your journey.</p>
-          <video class="gif4" autoplay muted loop playsinline disablePictureInPicture
+          <video class="gif4" muted loop playsinline preload="none" disablePictureInPicture
             poster="assets/gifs/npcs-fallback.png">
             <source src="assets/gifs/npcs.mp4" type="video/mp4" />
           </video>
